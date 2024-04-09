@@ -147,6 +147,7 @@ struct DefaultMessageCreator<pcl::PointCloud<T>>
 };
 #endif
 
+#if ROS_VERSION != 2
 namespace message_traits
 {
 template<typename T>
@@ -358,6 +359,7 @@ struct Serializer<pcl::PointCloud<T>>
   }
 };
 }  // namespace serialization
+#endif  // ROS_VERSION != 2
 
 /// @todo Printer specialization in message_operations
 
